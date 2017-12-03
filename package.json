@@ -1,6 +1,6 @@
 {
     "name": "action-bar",
-    "version": "0.0.1",
+    "version": "0.0.0",
     "description": "Via action bar.",
     "main": "./lib/main",
     "scripts": {
@@ -12,7 +12,7 @@
         "action",
         "bar"
     ],
-    "repository": "https://bitbucket.org/via-trading/action-bar",
+    "repository": "https://github.com/via-platform/action-bar",
     "author": "Dakota Gordon",
     "engines": {
         "via": "*"
@@ -27,10 +27,11 @@
             "description": "Show action bar at the top of the workspace."
         }
     },
-    "consumedServices": {
+    "providedServices": {
         "action-bar": {
+            "description": "A container for actions at the top of the workspace.",
             "versions": {
-                "^0.0.1": "consumeActionBar"
+                "0.0.0": "provideActionBar"
             }
         }
     }
