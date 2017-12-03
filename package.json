@@ -1,0 +1,37 @@
+{
+    "name": "action-bar",
+    "version": "0.0.1",
+    "description": "Via action bar.",
+    "main": "./lib/main",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "via",
+        "trading",
+        "action",
+        "bar"
+    ],
+    "repository": "https://bitbucket.org/via-trading/action-bar",
+    "author": "Dakota Gordon",
+    "engines": {
+        "via": "*"
+    },
+    "dependencies": {
+        "underscore-plus": "^1.0.0"
+    },
+    "configSchema": {
+        "isVisible": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show action bar at the top of the workspace."
+        }
+    },
+    "consumedServices": {
+        "action-bar": {
+            "versions": {
+                "^0.0.1": "consumeActionBar"
+            }
+        }
+    }
+}

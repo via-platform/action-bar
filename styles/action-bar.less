@@ -1,0 +1,69 @@
+@import "variables";
+
+@action-bar-height:           35px;
+
+@action-bar-text-size:        13px;
+@action-bar-background-color: #383838;
+@action-bar-border-color:     #141414;
+
+.action-bar
+{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: @action-bar-text-size;
+    background-color: @action-bar-background-color;
+    border-bottom: 1px solid @action-bar-border-color;
+    height: @action-bar-height;
+    transition: border-color ease 0.2s;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+
+    .action
+    {
+        flex: 0 1 auto;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .is-blurred &
+    {
+        color: @text-color-subtle;
+    }
+
+    &::after, &::before
+    {
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 0;
+        background: @primary-color;
+        transition: width 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    &:hover
+    {
+        // border-bottom-color: #444;
+        //
+        // &::after
+        // {
+        //     width: 100%;
+        // }
+    }
+}
+
+.action-bar-left, .action-bar-right
+{
+    flex: 1;
+    display: flex;
+}
+
+.action-bar-right
+{
+    justify-content: flex-end;
+}
