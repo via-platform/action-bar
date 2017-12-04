@@ -1,0 +1,12 @@
+'.platform-darwin':
+  'cmd-f': 'action-bar:omnibar-focus'
+
+'.platform-win32':
+  'ctrl-f': 'action-bar:omnibar-focus'
+
+'.platform-linux':
+  'ctrl-f': 'action-bar:omnibar-focus'
+
+'.action-bar .omnibar .search':
+  'escape': 'action-bar:omnibar-blur'
+  'tab': 'action-bar:omnibar-complete'

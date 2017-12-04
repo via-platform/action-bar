@@ -1,0 +1,143 @@
+@import "variables";
+@import "ui-variables";
+
+.omnibar
+{
+    -webkit-font-smoothing: antialiased;
+    flex: 1;
+    z-index: 12;
+    position: static;
+
+    &::after, &::before
+    {
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 0;
+        background: @primary-color;
+        transition: width 0.18s cubic-bezier(0.455, 0.03, 0.515, 0.955), background-color ease 0.18s;
+    }
+
+    .omnibar-input
+    {
+        display: flex;
+        align-items: center;
+        font-family: Inconsolata;
+        font-size: 16px;
+        font-weight: 700;
+        height: 34px;
+        line-height: 30px;
+        padding: 0 10px 4px;
+        position: relative;
+
+        .scope, .caret
+        {
+            margin-right: 10px;
+            transition: color ease 0.2s;
+            color: #AAA;
+        }
+
+        .caret
+        {
+            text-align: center;
+            width: 10px;
+        }
+
+        .search
+        {
+            -webkit-appearance: none;
+            background: transparent;
+            border: 0;
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            padding: 0;
+        }
+    }
+
+    &.is-focused
+    {
+        .omnibar-results
+        {
+            display: block;
+        }
+        
+        .omnibar-input
+        {
+            .scope, .caret
+            {
+                color: @primary-color;
+            }
+        }
+
+        &::after
+        {
+            width: 100%;
+        }
+    }
+
+    &.is-error
+    {
+        .omnibar-input
+        {
+            .scope, .caret
+            {
+                color: @background-color-error;
+            }
+        }
+
+        &::after
+        {
+            background: @background-color-error;
+        }
+    }
+}
+
+.omnibar-results
+{
+    display: none;
+    position: absolute;
+    width: 100%;
+    background: #383838;
+    top: 35px;
+    min-height: 100px;
+    max-height: 500px;
+    overflow: auto;
+    z-index: 12;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #080808;
+    padding-bottom: 20px;
+
+    ol
+    {
+        list-style: none;
+        margin: 0;
+        padding-left: 64px;
+    }
+
+    .header
+    {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: @text-color-subtle;
+        height: 16px;
+        line-height: 16px;
+        margin: 30px 0 8px;
+    }
+
+    li
+    {
+        font-family: Inconsolata;
+        font-weight: 700;
+        font-size: 16px;
+        color: #FFF;
+        height: 24px;
+        line-height: 24px;
+        margin: 2px 0;
+    }
+}

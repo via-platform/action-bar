@@ -4,7 +4,7 @@
 
 @action-bar-text-size:        13px;
 @action-bar-background-color: #383838;
-@action-bar-border-color:     #141414;
+@action-bar-border-color:     #111;
 
 .action-bar
 {
@@ -20,6 +20,7 @@
     transition: border-color ease 0.2s;
     -webkit-user-select: none;
     -webkit-app-region: drag;
+    z-index: 12;
 
     .action
     {
@@ -27,33 +28,6 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-    }
-
-    .is-blurred &
-    {
-        color: @text-color-subtle;
-    }
-
-    &::after, &::before
-    {
-        height: 2px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        content: "";
-        width: 0;
-        background: @primary-color;
-        transition: width 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    }
-
-    &:hover
-    {
-        // border-bottom-color: #444;
-        //
-        // &::after
-        // {
-        //     width: 100%;
-        // }
     }
 }
 
