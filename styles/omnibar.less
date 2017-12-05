@@ -29,20 +29,33 @@
         font-weight: 700;
         height: 34px;
         line-height: 30px;
-        padding: 0 10px 4px;
+        padding: 0 0 4px;
+        margin: 0 10px 0 0;
         position: relative;
 
         .scope, .caret
         {
-            margin-right: 10px;
+            margin-right: 12px;
             transition: color ease 0.2s;
-            color: #AAA;
+            color: #FFF;
         }
 
         .caret
         {
             text-align: center;
             width: 10px;
+            margin-right: 11px;
+        }
+
+        .bolt
+        {
+            margin: 0 5px 0 6px;
+
+            path
+            {
+                fill: #FFF;
+                transition: fill ease 0.2s;
+            }
         }
 
         .search
@@ -53,9 +66,45 @@
             height: 30px;
             line-height: 30px;
             display: block;
-            width: 100%;
-            max-width: 500px;
             padding: 0;
+            flex: 1;
+        }
+
+        .keybindings
+        {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: @text-color-subtle;
+            opacity: 0;
+            transition: opacity ease 0.2s;
+
+            kbd, div
+            {
+                margin: 0 8px 0 6px;
+                display: block;
+                font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+                font-weight: 400;
+                -webkit-font-smoothing: auto;
+
+                &:last-child
+                {
+                    margin-right: 0;
+                }
+            }
+
+            kbd
+            {
+                background: @text-color-subtle;
+                color: #1B1B1B;
+                border-radius: 2px;
+                height: 14px;
+                line-height: 14px;
+                margin-right: 0;
+                font-weight: 700;
+                font-size: 10px;
+                padding: 0 3px;
+            }
         }
     }
 
@@ -65,13 +114,23 @@
         {
             display: block;
         }
-        
+
         .omnibar-input
         {
             .scope, .caret
             {
                 color: @primary-color;
             }
+
+            .bolt path
+            {
+                fill: @primary-color;
+            }
+        }
+
+        .keybindings
+        {
+            opacity: 1;
         }
 
         &::after
@@ -88,6 +147,11 @@
             {
                 color: @background-color-error;
             }
+
+            .bolt path
+            {
+                fill: @background-color-error;
+            }
         }
 
         &::after
@@ -99,24 +163,24 @@
 
 .omnibar-results
 {
-    display: none;
+    // display: none;
     position: absolute;
     width: 100%;
-    background: #383838;
+    background: #1B1B1B;
     top: 35px;
     min-height: 100px;
-    max-height: 500px;
+    max-height: 600px;
     overflow: auto;
     z-index: 12;
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid #080808;
+    border-bottom: 1px solid #000;
     padding-bottom: 20px;
 
     ol
     {
         list-style: none;
         margin: 0;
-        padding-left: 64px;
+        padding: 0;
     }
 
     .header
@@ -127,7 +191,7 @@
         color: @text-color-subtle;
         height: 16px;
         line-height: 16px;
-        margin: 30px 0 8px;
+        margin: 30px 0 8px 82px;
     }
 
     li
@@ -136,8 +200,50 @@
         font-weight: 700;
         font-size: 16px;
         color: #FFF;
-        height: 24px;
-        line-height: 24px;
+        height: 30px;
+        line-height: 30px;
         margin: 2px 0;
+        display: flex;
+        align-items: center;
+
+        kbd
+        {
+            position: relative;
+            width: 82px;
+            padding: 0 10px 0 12px;
+            color: rgba(255, 255, 255, 0.4);
+            -webkit-font-smoothing: auto;
+            letter-spacing: 0.1em;
+            font-size: 13px;
+            font-weight: 400;
+            font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+        }
+
+        .name
+        {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .description
+        {
+            flex: 2;
+            position: relative;
+        }
+
+        &.selected
+        {
+            &::before
+            {
+                position: absolute;
+                left: 0;
+                right: 0;
+                background: #383838;
+                width: 100%;
+                height: 30px;
+                content: "";
+            }
+        }
     }
 }
