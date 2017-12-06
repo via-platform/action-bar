@@ -7,6 +7,22 @@
 '.platform-linux':
   'ctrl-f': 'action-bar:omnibar-focus'
 
-'.action-bar .omnibar .search':
-  'escape': 'action-bar:omnibar-blur'
-  'tab': 'action-bar:omnibar-complete'
+'.action-bar .omnibar .native-key-bindings':
+    'up': 'core:move-up'
+    'down': 'core:move-down'
+    'enter': 'core:confirm'
+
+'.platform-darwin .action-bar .omnibar .native-key-bindings':
+    'cmd-a': 'core:select-all'
+    'cmd-up': 'core:move-to-top'
+    'cmd-down': 'core:move-to-bottom'
+
+'.platform-win32 .action-bar .omnibar .native-key-bindings':
+    'ctrl-a': 'core:select-all'
+    'ctrl-home': 'core:move-to-top'
+    'ctrl-end': 'core:move-to-bottom'
+
+'.platform-linux .action-bar .omnibar .native-key-bindings':
+    'ctrl-a': 'core:select-all'
+    'ctrl-home': 'core:move-to-top'
+    'ctrl-end': 'core:move-to-bottom'

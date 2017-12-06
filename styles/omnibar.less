@@ -154,6 +154,11 @@
             }
         }
 
+        .omnibar-results
+        {
+            display: none;
+        }
+
         &::after
         {
             background: @background-color-error;
@@ -163,12 +168,12 @@
 
 .omnibar-results
 {
-    // display: none;
+    display: none;
     position: absolute;
     width: 100%;
     background: #1B1B1B;
     top: 35px;
-    min-height: 100px;
+    // min-height: 100px;
     max-height: 600px;
     overflow: auto;
     z-index: 12;
@@ -224,6 +229,22 @@
             flex: 1;
             min-width: 200px;
             position: relative;
+
+            span
+            {
+                position: relative;
+
+                &::after
+                {
+                    position: absolute;
+                    content: "";
+                    bottom: -3px;
+                    height: 1px;
+                    left: 0;
+                    right: 0;
+                    background: @primary-color; //@text-color-subtle;
+                }
+            }
         }
 
         .description

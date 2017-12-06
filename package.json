@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "etch": "^0.12.7",
+    "fuzzaldrin": "^2.1.0",
     "underscore-plus": "^1.0.0"
   },
   "configSchema": {
