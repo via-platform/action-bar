@@ -1,10 +1,12 @@
 @import "variables";
 
-@action-bar-height:           35px;
+@action-bar-padding-top:      22px;
+@action-bar-height:           34px;
 
 @action-bar-text-size:        13px;
-@action-bar-background-color: #1B1B1B;
-@action-bar-border-color:     #000;
+@action-bar-background-color: #181818;//#21252b;
+@action-bar-border-color:     @pane-border-color;
+@action-bar-border-width:     @pane-border-width;
 
 .action-bar
 {
@@ -14,9 +16,10 @@
     justify-content: center;
     overflow: hidden;
     font-size: @action-bar-text-size;
-    background-color: @action-bar-background-color;
-    border-bottom: 1px solid @action-bar-border-color;
-    height: @action-bar-height;
+    background: @action-bar-background-color;
+    border-bottom: @action-bar-border-width solid @action-bar-border-color;
+    padding-top: @action-bar-padding-top;
+    height: @action-bar-height + @action-bar-padding-top + @action-bar-border-width;
     transition: border-color ease 0.2s;
     -webkit-user-select: none;
     -webkit-app-region: drag;
