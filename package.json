@@ -33,7 +33,7 @@
     "action-bar": {
       "description": "A container for actions at the top of the workspace.",
       "versions": {
-        "0.0.0": "provideActionBar"
+        "0.1.0": "provideActionBar"
       }
     }
   }
