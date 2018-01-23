@@ -22,13 +22,7 @@
     "fuzzaldrin": "^2.1.0",
     "underscore-plus": "^1.0.0"
   },
-  "configSchema": {
-    "isVisible": {
-      "type": "boolean",
-      "default": true,
-      "description": "Show action bar at the top of the workspace."
-    }
-  },
+  "configSchema": {},
   "providedServices": {
     "action-bar": {
       "description": "A container for actions at the top of the workspace.",
