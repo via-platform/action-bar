@@ -1,7 +1,7 @@
 @import "variables";
 @import "ui-variables";
 
-@omnibar-results-background: @workspace-background-color;
+@omnibar-results-background: @pane-background-color;
 
 .omnibar
 {
@@ -26,9 +26,9 @@
     {
         display: flex;
         align-items: center;
-        font-family: Inconsolata;
-        font-size: 16px;
-        font-weight: 700;
+        font-family: @font-family;
+        font-size: 14px;
+        font-weight: 500;
         height: 34px;
         line-height: 30px;
         padding: 0 0 4px;
@@ -76,7 +76,7 @@
         {
             display: flex;
             align-items: center;
-            font-size: 12px;
+            font-size: 11px;
             color: @text-color-subtle;
             opacity: 0;
             transition: opacity ease 0.2s;
@@ -85,9 +85,7 @@
             {
                 margin: 0 8px 0 6px;
                 display: block;
-                font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
-                font-weight: 400;
-                -webkit-font-smoothing: auto;
+                font-weight: 500;
 
                 &:last-child
                 {
@@ -103,7 +101,7 @@
                 height: 14px;
                 line-height: 14px;
                 margin-right: 0;
-                font-weight: 700;
+                font-weight: 500;
                 font-size: 10px;
                 padding: 0 3px;
             }
@@ -173,13 +171,13 @@
     display: none;
     position: absolute;
     width: 100%;
-    background: @omnibar-results-background;//@pane-background-color;
-    top: 57px;
+    background: @omnibar-results-background;
+    top: 56px;
     max-height: 600px;
     overflow: auto;
     z-index: 1081;
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid darken(@workspace-background-color, 15%);
+    border-bottom: 1px solid @header-border-color;
     padding-bottom: 20px;
 
     ol
@@ -191,7 +189,7 @@
 
     .header
     {
-        font-size: 12px;
+        font-size: 11px;
         text-transform: uppercase;
         font-weight: 700;
         color: @text-color-subtle;
@@ -202,15 +200,16 @@
 
     li
     {
-        font-family: Inconsolata;
-        font-weight: 700;
-        font-size: 16px;
+        font-family: @font-family;
+        font-weight: 500;
+        font-size: 14px;
         color: @text-color;
         height: 30px;
         line-height: 30px;
-        margin: 2px 0;
+        margin: 0;
         display: flex;
         align-items: center;
+        cursor: default;
 
         kbd
         {
@@ -218,11 +217,9 @@
             width: 82px;
             padding: 0 10px 0 12px;
             color: @text-color-subtle;
-            -webkit-font-smoothing: auto;
             letter-spacing: 0.1em;
             font-size: 13px;
-            font-weight: 400;
-            font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+            font-weight: 700;
         }
 
         .name
@@ -269,7 +266,7 @@
                 position: absolute;
                 left: 0;
                 right: 0;
-                background: @pane-background-color;
+                background: lighten(@pane-background-color, 8%);
                 width: 100%;
                 height: 30px;
                 content: "";
