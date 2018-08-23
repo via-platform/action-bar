@@ -1,6 +1,6 @@
 {
   "name": "action-bar",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Via action bar.",
   "main": "./lib/main",
   "scripts": {
